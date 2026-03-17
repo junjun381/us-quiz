@@ -408,6 +408,8 @@ function App() {
     <div className="app">
       <h1>🇺🇸 US Geography Quiz</h1>
 
+      <div className="app-layout">
+      <div className="app-sidebar">
       <div className="tabs">
         <button className={tab === 'states' ? 'tab active' : 'tab'} onClick={() => { setTab('states'); endQuiz() }}>
           州を覚える
@@ -539,7 +541,9 @@ function App() {
           </div>
         )}
       </div>
+      </div>{/* app-sidebar */}
 
+      <div className="app-main">
       <div className="map-container">
         {isZoomed && (
           <button className="zoom-reset-button" onClick={resetZoom}>↺ Reset zoom</button>
@@ -552,11 +556,19 @@ function App() {
       </p>
 
       <footer className="app-footer">
+        <div className="book-recommend">
+          <p className="book-recommend-label">地図と一緒に使うと捗る本</p>
+          <a href="https://amzn.to/474h3cI" target="_blank" rel="noopener noreferrer" className="book-link">
+            📖 地図でスッと頭に入るアメリカ50州 →
+          </a>
+        </div>
         <p>役に立ったら応援していただけると嬉しいです！</p>
         <a href="https://ofuse.me/7a2e33c9" target="_blank" rel="noopener noreferrer" className="ofuse-button">
           ☕ OFUSEで応援する
         </a>
       </footer>
+      </div>{/* app-main */}
+      </div>{/* app-layout */}
     </div>
   )
 }
